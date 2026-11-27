@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{resume}[2026/11/27 Compact academic resume]
-\LoadClass[10pt]{article}
+\LoadClass[11pt]{article}
 
 \RequirePackage{fontspec}
 \setmainfont{TeX Gyre Termes}
@@ -24,13 +24,13 @@
 \setlength{\tabcolsep}{0pt}
 \pagestyle{empty}
 \raggedbottom
-\AtBeginDocument{\color{bodytext}\fontsize{10.5pt}{14.2pt}\selectfont}
+\AtBeginDocument{\color{bodytext}\fontsize{11.5pt}{15.5pt}\selectfont}
 \setlist[itemize]{topsep=1.5pt,itemsep=0.5pt,parsep=0pt,partopsep=0pt,leftmargin=1.3em}
 \setlist[enumerate]{topsep=1.5pt,itemsep=1pt,parsep=0pt,partopsep=0pt,leftmargin=1.5pc}
 
 % Simple headings with a single thin rule.
 \titleformat{\section}
-  {\fontsize{12pt}{14pt}\selectfont\bfseries\color{accent}}
+  {\fontsize{13.5pt}{16pt}\selectfont\bfseries\color{accent}}
   {}{0pt}{}[\vspace{1pt}{\color{accent!45}\titlerule[0.4pt]}]
 \titlespacing*{\section}{0pt}{6pt}{3pt}
 \titleformat{\subsection}{\normalsize\bfseries}{}{0pt}{}
@@ -50,7 +50,7 @@
     #1 & {\small #2}\\
   \end{tabularx}\par
 }
-\newcommand{\name}[1]{{\centering\fontsize{24pt}{28pt}\selectfont\bfseries #1\par}\vspace{4pt}}
+\newcommand{\name}[1]{{\centering\fontsize{27pt}{32pt}\selectfont\bfseries #1\par}\vspace{4pt}}
 \newcommand{\nameTest}[1]{{\large\bfseries #1}}
 \newcommand{\email}[1]{\faEnvelope\ \href{mailto:#1}{\nolinkurl{#1}}}
 \newcommand{\phone}[1]{\faPhone\ #1}

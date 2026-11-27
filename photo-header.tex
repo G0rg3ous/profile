@@ -1,16 +1,16 @@
 % Compact two-column header shared by Chinese and English documents.
 \usepackage{graphicx}
 % Upload photo.jpg or photo.png to the same directory as main.tex.
-% Photos are scaled proportionally to fit within 2.2 cm x 2.9 cm.
+% Photos are scaled proportionally to fit within 2.8 cm x 3.7 cm.
 \newcommand{\cvphotobox}{%
   \IfFileExists{photo.jpg}{%
-    \includegraphics[width=2.2cm,height=2.9cm,keepaspectratio]{photo.jpg}%
+    \includegraphics[width=2.8cm,height=3.7cm,keepaspectratio]{photo.jpg}%
   }{%
     \IfFileExists{photo.png}{%
-      \includegraphics[width=2.2cm,height=2.9cm,keepaspectratio]{photo.png}%
+      \includegraphics[width=2.8cm,height=3.7cm,keepaspectratio]{photo.png}%
     }{%
       {\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.3pt}\color{accent!25}%
-      \fbox{\parbox[c][2.9cm][c]{2.2cm}{\centering
+      \fbox{\parbox[c][3.7cm][c]{2.8cm}{\centering
         \normalfont\scriptsize\color{accent!65}PHOTO\\[3pt]
         photo.jpg / photo.png}}}%
     }%
@@ -18,13 +18,13 @@
 }
 \newcommand{\cvheader}[2]{%
   \noindent
-  \begin{minipage}[c]{\dimexpr\textwidth-2.7cm\relax}
+  \begin{minipage}[c]{\dimexpr\textwidth-3.3cm\relax}
     \raggedright
-    {\fontsize{24pt}{28pt}\selectfont\bfseries #1\par}
+    {\fontsize{27pt}{32pt}\selectfont\bfseries #1\par}
     \vspace{4pt}
-    {\small #2\par}
+    {\fontsize{11pt}{14.5pt}\selectfont #2\par}
   \end{minipage}\hfill
-  \begin{minipage}[c]{2.2cm}
+  \begin{minipage}[c]{2.8cm}
     \centering\cvphotobox
   \end{minipage}%
   \par\vspace{2pt}
