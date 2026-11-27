@@ -19,6 +19,7 @@
 | `main.tex` | 中文简历，默认入口 |
 | `main-en.tex` | 英文简历 |
 | `resume.cls` | 排版、间距与主题色 |
+| `photo-header.tex` | 姓名、联系方式及右上角照片布局 |
 | `LICENSE` | 原模板 MIT 许可证 |
 | `UPSTREAM.md` | 来源、改动和字体许可说明 |
 
@@ -28,7 +29,7 @@
 - 将论文的接收、投稿或准备状态填写准确；示例内容不是个人履历。
 - 修改主题色：在 `resume.cls` 中查找 `\definecolor{accent}{HTML}{183B56}`。
 - 中文使用 TeX Live 自带 Fandol 字体，无需 Adobe 中文字体。
-- 默认不含照片，便于突出科研内容；需要时可另行增加。
+- 顶部采用左侧姓名及联系方式、右侧个人照片布局。
 - 内容较多时允许自然分页，不建议过度缩小字号。
 
 ## 本地编译
@@ -39,3 +40,16 @@
 xelatex main.tex
 xelatex main-en.tex
 ```
+
+## 上传个人照片
+
+在 Overleaf 左侧文件列表点击上传，将照片放在与 `main.tex` 同级的项目根目录：
+
+- JPEG 照片命名为 **photo.jpg**；PNG 照片命名为 **photo.png**。
+- 文件名区分大小写；若两种文件都存在，优先使用 `photo.jpg`。
+- 无需修改代码，重新编译后照片自动出现在右上角。
+- 未上传时显示照片占位框，不会因缺少照片而报错。
+- 照片保持原始比例，最大尺寸为宽 2.7 cm、高 3.5 cm；建议使用事先裁好的竖版证件照。
+- 若要调整尺寸，编辑 `photo-header.tex`；较大幅度改宽度时也需要调整两侧栏宽。
+
+已导入 Overleaf 的旧项目需要替换 `main.tex`、`main-en.tex`，并新增 `photo-header.tex`；也可重新下载仓库 ZIP 后导入。

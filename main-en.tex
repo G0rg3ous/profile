@@ -1,14 +1,16 @@
 % !TEX program = xelatex
 \documentclass{resume}
+\input{photo-header.tex}
 \begin{document}
 \pagenumbering{gobble}
-\name{Your Name}
-\begin{center}
-{\color{accent}Ph.D. Student | Medical Image Analysis \& Computer Vision}\\[5pt]
-\email{your.name@example.com}\quad\phone{(+86) 138-0000-0000}\\[3pt]
+% Upload photo.jpg or photo.png into the project root to replace the placeholder.
+\cvheader{Your Name}{%
+{\color{accent}Ph.D. Student | Medical Image Analysis \& Computer Vision}\\[7pt]
+\email{your.name@example.com}\\[4pt]
+\phone{(+86) 138-0000-0000}\\[4pt]
 \github[GitHub]{https://github.com/your-username}\quad
 \homepage[Website]{https://example.com}
-\end{center}
+}
 \section{Education}
 \datedsubsection{\textbf{University Name}, City, Country}{20XX -- Present}
 Ph.D. in Your Discipline. Advisor: Prof. Advisor Name.

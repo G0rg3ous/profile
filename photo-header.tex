@@ -1,0 +1,31 @@
+% Shared photo header for both resume languages.
+\usepackage{graphicx}
+% Upload photo.jpg (preferred) or photo.png to the project root.
+% The image keeps its aspect ratio and fits within 2.7 cm x 3.5 cm.
+\newcommand{\cvphotobox}{%
+  \IfFileExists{photo.jpg}{%
+    \includegraphics[width=2.7cm,height=3.5cm,keepaspectratio]{photo.jpg}%
+  }{%
+    \IfFileExists{photo.png}{%
+      \includegraphics[width=2.7cm,height=3.5cm,keepaspectratio]{photo.png}%
+    }{%
+      {\setlength{\fboxsep}{0pt}\color{accent!40}%
+      \fbox{\parbox[c][3.5cm][c]{2.7cm}{\centering
+        \normalfont\small\color{accent} PHOTO\\[6pt]
+        \scriptsize photo.jpg / photo.png}}}%
+    }%
+  }%
+}
+\newcommand{\cvheader}[2]{%
+  \noindent
+  \begin{minipage}[c]{\dimexpr\textwidth-3.2cm\relax}
+    \raggedright
+    {\Huge\bfseries #1\par}
+    \vspace{8pt}
+    {\small #2\par}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{2.7cm}
+    \centering\cvphotobox
+  \end{minipage}
+  \par\vspace{3pt}
+}

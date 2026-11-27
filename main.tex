@@ -2,15 +2,17 @@
 % 在 Overleaf 中选择 XeLaTeX；编辑本文件即可。
 \documentclass{resume}
 \usepackage[UTF8,scheme=plain,fontset=fandol]{ctex}
+\input{photo-header.tex}
 \begin{document}
 \pagenumbering{gobble}
-\name{你的姓名}
-\begin{center}
-{\color{accent}博士研究生\quad |\quad 医学图像分析与计算机视觉}\\[5pt]
-\email{your.name@example.com}\quad\phone{(+86) 138-0000-0000}\\[3pt]
+% Upload photo.jpg or photo.png into the project root to replace the placeholder.
+\cvheader{你的姓名}{%
+{\color{accent}博士研究生\quad |\quad 医学图像分析与计算机视觉}\\[7pt]
+\email{your.name@example.com}\\[4pt]
+\phone{(+86) 138-0000-0000}\\[4pt]
 \github[GitHub]{https://github.com/your-username}\quad
 \homepage[个人主页]{https://example.com}
-\end{center}
+}
 
 \section{教育背景}
 \datedsubsection{\textbf{学校名称}\quad 学院名称}{20XX -- 至今}
