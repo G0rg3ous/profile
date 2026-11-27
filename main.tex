@@ -1,0 +1,56 @@
+% !TEX program = xelatex
+% 在 Overleaf 中选择 XeLaTeX；编辑本文件即可。
+\documentclass{resume}
+\usepackage[UTF8,scheme=plain,fontset=fandol]{ctex}
+\begin{document}
+\pagenumbering{gobble}
+\name{你的姓名}
+\begin{center}
+{\color{accent}博士研究生\quad |\quad 医学图像分析与计算机视觉}\\[5pt]
+\email{your.name@example.com}\quad\phone{(+86) 138-0000-0000}\\[3pt]
+\github[GitHub]{https://github.com/your-username}\quad
+\homepage[个人主页]{https://example.com}
+\end{center}
+
+\section{教育背景}
+\datedsubsection{\textbf{学校名称}\quad 学院名称}{20XX -- 至今}
+博士研究生，专业名称\quad 导师：导师姓名
+\datedsubsection{\textbf{学校名称}\quad 学院名称}{20XX -- 20XX}
+学士，专业名称\quad GPA：X.XX / X.XX（可选）
+
+\section{研究方向}
+三维医学图像分析、解剖关键点检测、少样本学习、多模态学习。
+
+\section{科研经历}
+\datedsubsection{\textbf{研究项目名称一}}{20XX -- 至今}
+\role{项目角色}{合作单位或实验室名称}
+\begin{itemize}
+\item \textbf{研究问题：}用一句话说明研究背景、核心问题与应用价值。
+\item \textbf{个人贡献：}描述你提出的方法、负责的模块及解决的技术难点。
+\item \textbf{实验结果：}填写可核验的量化结果，例如误差降低比例或数据集规模。
+\end{itemize}
+\datedsubsection{\textbf{研究项目名称二}}{20XX -- 20XX}
+\begin{itemize}
+\item 简述方法设计、实现过程及本人承担的具体工作。
+\item 补充实验发现、开源成果或实际应用进展。
+\end{itemize}
+
+\section{学术论文}
+\begin{enumerate}[leftmargin=1.5pc]
+\item \textbf{Your Name}, Coauthor A, Coauthor B. Paper title goes here.
+\textit{Conference / Journal}, 20XX.（已接收；请填写真实状态）
+\item \textbf{Your Name}, Coauthor A. Another paper title goes here.
+\textit{Manuscript in preparation}.（准备中；可按需要删除）
+\end{enumerate}
+
+\section{专业技能}
+\begin{itemize}
+\item \textbf{编程与框架：}Python、PyTorch、Linux、Git、LaTeX。
+\item \textbf{研究工具：}填写实际掌握的图像处理、建模与实验分析工具。
+\item \textbf{语言能力：}填写英语水平或其他语言能力。
+\end{itemize}
+
+\section{荣誉奖励}
+\datedline{奖项或奖学金名称\quad（级别或授予单位）}{20XX}
+\datedline{奖项或竞赛名称\quad（排名或获奖等级）}{20XX}
+\end{document}
