@@ -22,44 +22,27 @@
 三维医学图像分析、解剖关键点检测、少样本学习、多模态学习。
 
 \section{科研经历}
-\datedsubsection{G2C-Corr：从通用对应学习到少样本三维骨性关键点检测}{}
+\datedsubsection{针对少样本三维骨性关键点检测的通用对应学习}{在投}
 \begin{itemize}
 \item \textbf{内容介绍：}面向髋、膝、踝 CT 中临床关键点标注成本高的问题，将关键点检测统一为源点到目标体积的对应预测，通过“无标注通用对应预训练--少样本临床适应”两阶段策略，将未标注解剖信息用于临床关键点检测。
-\item \textbf{应用技术：}PyTorch、三维掩码自编码器（MAE）、自监督对应学习、少样本学习、多尺度注意力、热图回归。
+\item \textbf{应用技术：}PyTorch、自监督对应学习、少样本学习、多尺度注意力、热图回归。
 \item \textbf{负责内容：}基于冻结的多尺度 MAE 特征设计点条件对应解码器，融合源点解剖特征与目标体积上下文，完成由粗到细的全体积预测；利用已知空间变换构造无标注点对监督，并在临床适应阶段引入关键点身份编码、跨患者标注训练与通用对应回放，衔接通用解剖学习和临床任务适应。
 \end{itemize}
 
-\datedsubsection{语言解剖先验驱动的三维医学关键点检测}{}
+\datedsubsection{语言解剖先验驱动的三维医学关键点检测}{已接收}
 \begin{itemize}
 \item \textbf{内容介绍：}针对三维医学关键点检测主要依赖图像特征、难以利用解剖语义的问题，将关键点名称中蕴含的解剖知识作为语言先验，引导膝关节 CT 与脑部 MRI 中的关键点检测。
 \item \textbf{应用技术：}PyTorch、Qwen3-VL、多模态特征融合、交叉注意力、动态预测核、三维热图回归。
 \item \textbf{负责内容：}设计可插拔的视觉--语言交互框架，利用冻结的 Qwen3-VL 单层模块融合三维视觉特征与解剖文本；设计关键点查询解码器，通过多尺度交叉注意力与动态预测核生成语义热图，并与视觉分支融合；开展多架构对比及模块、文本语义消融实验。
-\item \textbf{研究成果：}相关论文以第一作者被 IEEE BIBM 2026（CCF-B） 接收。
+\item \textbf{研究成果：}\textbf{相关论文以第一作者被 BIBM 2026（CCF-B） 接收。}
 \end{itemize}
 
-\datedsubsection{基于脑电与眼动信号的单兵作战心理状态检测系统研究}{2023.09}
-\begin{itemize}
-\item \textbf{内容介绍：}针对单兵长时间处于复杂对战环境下容易出现疲劳、紧张等心理异常问题，开展基于脑电与眼动的无人平台交互技术研究，突破基于认知科学的心理状态检测技术、脑电与眼动信号特征识别提取技术、多模态信息融合与编解码技术等关键技术，研制一套人机融合交互系统进行心理状态监测，将视觉注意机制、人类经验知识与机器智能相结合，实现对疲劳、紧张、兴奋等心理状态的实时监测。
-\item \textbf{应用技术：}PyTorch、Transformer、图神经网络等。
-\item \textbf{负责内容：}基于脑电与眼动信号的心理状态检测与评估技术原理与方法研究；脑电信号、眼动信号特征提取算法研究，应用 Transformer、图神经网络等网络架构；脑电信号、眼动信号特征融合与解码算法研究，应用多模态算法融合。
-\end{itemize}
-
-\section{学术论文}
-\begin{enumerate}[leftmargin=1.5pc]
-\item \textbf{Your Name}, Coauthor A, Coauthor B. Paper title goes here.
-\textit{Conference / Journal}, 20XX.（已接收；请填写真实状态）
-\item \textbf{Your Name}, Coauthor A. Another paper title goes here.
-\textit{Manuscript in preparation}.（准备中；可按需要删除）
-\end{enumerate}
 
 \section{专业技能}
 \begin{itemize}
-\item \textbf{编程与框架：}Python、PyTorch、Linux、Git、LaTeX。
-\item \textbf{研究工具：}填写实际掌握的图像处理、建模与实验分析工具。
-\item \textbf{语言能力：}填写英语水平或其他语言能力。
+\item \textbf{熟悉DICOM和CT、MR等医学影像数据处理}
+\item \textbf{熟悉医学landmark detection、segmentation、registration相关工作、框架及部署}
+\item \textbf{有vibecoding经验}
 \end{itemize}
 
-\section{荣誉奖励}
-\datedline{奖项或奖学金名称\quad（级别或授予单位）}{20XX}
-\datedline{奖项或竞赛名称\quad（排名或获奖等级）}{20XX}
 \end{document}
