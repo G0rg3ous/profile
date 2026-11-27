@@ -16,16 +16,23 @@
     }%
   }%
 }
+% Three columns: name | contact information | portrait.
 \newcommand{\cvheader}[2]{%
   \noindent
-  \begin{minipage}[c]{\dimexpr\textwidth-3.2cm\relax}
-    \raggedright
-    {\Huge\bfseries #1\par}
-    \vspace{8pt}
-    {\small #2\par}
+  \begin{minipage}[t][3.55cm][t]{2.9cm}
+    \vspace{2mm}
+    \raggedright{\fontsize{25pt}{31pt}\selectfont\bfseries #1\par}
   \end{minipage}\hfill
-  \begin{minipage}[c]{2.7cm}
-    \centering\cvphotobox
-  \end{minipage}
-  \par\vspace{3pt}
+  \begin{minipage}[t][3.55cm][t]{\dimexpr\textwidth-6.2cm\relax}
+    \vspace{2mm}
+    \raggedright{\small #2\par}
+  \end{minipage}\hfill
+  \begin{minipage}[t][3.55cm][t]{2.7cm}
+    \vspace{0pt}\centering\cvphotobox
+  \end{minipage}%
+  \par\vspace{1pt}
+  {\color{ruleblue}\hrule height 1.2pt}
+  \vspace{1pt}
+  {\color{rulegold}\hrule height 0.5pt}
+  \par\vspace{2pt}
 }

@@ -53,3 +53,9 @@ xelatex main-en.tex
 - 若要调整尺寸，编辑 `photo-header.tex`；较大幅度改宽度时也需要调整两侧栏宽。
 
 已导入 Overleaf 的旧项目需要替换 `main.tex`、`main-en.tex`，并新增 `photo-header.tex`；也可重新下载仓库 ZIP 后导入。
+
+## 参考版式更新
+
+参照提供的简历 PDF，顶部改为“姓名 / 联系信息 / 照片”三栏，正文使用深蓝色小节标题、蓝金色分隔线和左侧细竖线，缩小页边距并收紧项目间距。原有正文、联系方式和照片上传方式保留。
+
+布局主要由 `resume.cls` 和 `photo-header.tex` 控制。已填写过正文的 Overleaf 项目，只需替换这两个文件即可应用新布局，无需覆盖个人内容。

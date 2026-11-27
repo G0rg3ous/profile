@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{resume}[2015/05/25 An elegant Résumé class]
-\LoadClass[11pt]{article}
+\LoadClass[10pt]{article}
 
 % disable indent globally
 \setlength{\parindent}{0pt}
@@ -17,7 +17,22 @@
 \RequirePackage{fontawesome5}
 % use xcolor for customizing color
 \RequirePackage{xcolor}
-\definecolor{accent}{HTML}{183B56}
+\definecolor{accent}{HTML}{284D68}
+\definecolor{ruleblue}{HTML}{50798B}
+\definecolor{rulegold}{HTML}{BE9B60}
+\definecolor{bodytext}{HTML}{444444}
+\RequirePackage{tikz}
+\RequirePackage{eso-pic}
+\AtBeginDocument{\color{bodytext}\fontsize{10.5pt}{15pt}\selectfont}
+% A subtle left rail, matching the reference resume.
+\AddToShipoutPictureBG{%
+  \AtPageLowerLeft{%
+    \begin{tikzpicture}[overlay]
+      \draw[ruleblue,line width=0.45pt]
+        (0.90cm,1.0cm) -- (0.90cm,\dimexpr\paperheight-4.8cm\relax);
+    \end{tikzpicture}%
+  }%
+}
 % loading fonts
 \RequirePackage{fontspec}
 % Main document font
@@ -25,10 +40,10 @@
 
 \RequirePackage[
 	a4paper,
-	left=0.8in,
-	right=0.8in,
-	top=0.70in,
-	bottom=0.55in,
+	left=1.15cm,
+	right=1.15cm,
+	top=0.45in,
+	bottom=0.45in,
 	nohead
 ]{geometry}
 
@@ -36,23 +51,29 @@
 \RequirePackage{enumitem}
 \setlist{noitemsep} % removes spacing from items but leaves space around the whole list
 %\setlist{nosep} % removes all vertical spacing within and around the list
-\setlist[itemize]{topsep=0.25em, leftmargin=1.5pc}
-\setlist[enumerate]{topsep=0.25em, leftmargin=1.5pc}
+\setlist[itemize]{topsep=2pt,itemsep=1pt,parsep=0pt,leftmargin=1.3em}
+\setlist[enumerate]{topsep=2pt,itemsep=2pt,parsep=0pt,leftmargin=1.5pc}
 \RequirePackage[super]{nth}
 
-\titleformat{\section}         % Customise the \section command 
-  {\Large\scshape\raggedright\color{accent}} % Make the \section headers large (\Large),
-                               % small capitals (\scshape) and left aligned (\raggedright)
-  {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
-  {}                           % Can be used to insert code before the heading
-  [\titlerule]                 % Inserts a horizontal line after the heading
-\titlespacing*{\section}{0cm}{*1.8}{*1.8}
+% Colored section title and slim blue/gold separator.
+\newcommand{\cvsectionrule}{%
+  \par\nobreak\vspace{1pt}%
+  \begin{tikzpicture}
+    \path[use as bounding box] (0,0) rectangle (\linewidth,0.8mm);
+    \fill[rulegold] (0,0) rectangle (\linewidth,0.28mm);
+    \fill[ruleblue] (0,0) -- (0,0.8mm) -- (0.35\linewidth,0.8mm)
+      -- (\dimexpr0.35\linewidth+2mm\relax,0) -- cycle;
+  \end{tikzpicture}%
+}
+\titleformat{\section}
+  {\large\bfseries\raggedright\color{accent}}{}{0em}{}[\cvsectionrule]
+\titlespacing*{\section}{0pt}{7pt}{3pt}
 
 \titleformat{\subsection}
-  {\large\raggedright}
+  {\normalsize\raggedright}
   {}{0em}
   {}
-\titlespacing*{\subsection}{0cm}{*1.8}{*0.6}
+\titlespacing*{\subsection}{0cm}{5pt}{2pt}
 
 \newcommand{\datedsection}[2]{%
   \section[#1]{#1 \hfill #2}%
@@ -111,5 +132,5 @@
 
 \newcommand{\role}[2]{
   {\par \textit{#1} ~ #2 \par}
-  \vspace{0.85ex}
+  \vspace{2pt}
 }
