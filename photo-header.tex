@@ -1,4 +1,4 @@
-% Compact two-column header shared by Chinese and English documents.
+% Three-column header: Beihang emblem, centered personal information, portrait.
 \usepackage{graphicx}
 % Upload photo.jpg or photo.png to the same directory as main.tex.
 % Photos are scaled proportionally to fit within 2.8 cm x 3.7 cm.
@@ -16,16 +16,23 @@
     }%
   }%
 }
+% Equal-width side columns keep the personal information centered on the page.
 \newcommand{\cvheader}[2]{%
   \noindent
-  \begin{minipage}[c]{\dimexpr\textwidth-3.3cm\relax}
-    \raggedright
+  \begin{minipage}[t]{3.0cm}
+    \vspace{0pt}\raggedright
+    \IfFileExists{beihang-logo.jpg}{%
+      \includegraphics[width=2.8cm,height=2.8cm,keepaspectratio]{beihang-logo.jpg}%
+    }{\hspace*{2.8cm}}%
+  \end{minipage}\hfill
+  \begin{minipage}[t]{\dimexpr\textwidth-6.6cm\relax}
+    \vspace{0pt}\centering
     {\fontsize{27pt}{32pt}\selectfont\bfseries #1\par}
     \vspace{4pt}
     {\fontsize{11pt}{14.5pt}\selectfont #2\par}
   \end{minipage}\hfill
-  \begin{minipage}[c]{2.8cm}
-    \centering\cvphotobox
+  \begin{minipage}[t]{3.0cm}
+    \vspace{0pt}\raggedleft\cvphotobox
   \end{minipage}%
   \par\vspace{2pt}
 }
