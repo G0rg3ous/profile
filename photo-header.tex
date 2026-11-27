@@ -1,38 +1,31 @@
-% Shared photo header for both resume languages.
+% Compact two-column header shared by Chinese and English documents.
 \usepackage{graphicx}
-% Upload photo.jpg (preferred) or photo.png to the project root.
-% The image keeps its aspect ratio and fits within 2.7 cm x 3.5 cm.
+% Upload photo.jpg or photo.png to the same directory as main.tex.
+% Photos are scaled proportionally to fit within 2.2 cm x 2.9 cm.
 \newcommand{\cvphotobox}{%
   \IfFileExists{photo.jpg}{%
-    \includegraphics[width=2.7cm,height=3.5cm,keepaspectratio]{photo.jpg}%
+    \includegraphics[width=2.2cm,height=2.9cm,keepaspectratio]{photo.jpg}%
   }{%
     \IfFileExists{photo.png}{%
-      \includegraphics[width=2.7cm,height=3.5cm,keepaspectratio]{photo.png}%
+      \includegraphics[width=2.2cm,height=2.9cm,keepaspectratio]{photo.png}%
     }{%
-      {\setlength{\fboxsep}{0pt}\color{accent!40}%
-      \fbox{\parbox[c][3.5cm][c]{2.7cm}{\centering
-        \normalfont\small\color{accent} PHOTO\\[6pt]
-        \scriptsize photo.jpg / photo.png}}}%
+      {\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.3pt}\color{accent!25}%
+      \fbox{\parbox[c][2.9cm][c]{2.2cm}{\centering
+        \normalfont\scriptsize\color{accent!65}PHOTO\\[3pt]
+        photo.jpg / photo.png}}}%
     }%
   }%
 }
-% Three columns: name | contact information | portrait.
 \newcommand{\cvheader}[2]{%
   \noindent
-  \begin{minipage}[t][3.55cm][t]{2.9cm}
-    \vspace{2mm}
-    \raggedright{\fontsize{25pt}{31pt}\selectfont\bfseries #1\par}
+  \begin{minipage}[c]{\dimexpr\textwidth-2.7cm\relax}
+    \raggedright
+    {\fontsize{24pt}{28pt}\selectfont\bfseries #1\par}
+    \vspace{4pt}
+    {\small #2\par}
   \end{minipage}\hfill
-  \begin{minipage}[t][3.55cm][t]{\dimexpr\textwidth-6.2cm\relax}
-    \vspace{2mm}
-    \raggedright{\small #2\par}
-  \end{minipage}\hfill
-  \begin{minipage}[t][3.55cm][t]{2.7cm}
-    \vspace{0pt}\centering\cvphotobox
+  \begin{minipage}[c]{2.2cm}
+    \centering\cvphotobox
   \end{minipage}%
-  \par\vspace{1pt}
-  {\color{ruleblue}\hrule height 1.2pt}
-  \vspace{1pt}
-  {\color{rulegold}\hrule height 0.5pt}
   \par\vspace{2pt}
 }
